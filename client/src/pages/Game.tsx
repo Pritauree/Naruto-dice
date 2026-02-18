@@ -7,6 +7,19 @@ import confetti from "canvas-confetti";
 import {RefreshCw} from "lucide-react";
 import {cn} from "@/lib/utils";
 
+// Événements pour chaque case
+const caseEvents: Record<number, string> = {
+  1: "Combat",
+  2: "Histoire",
+  3: "Combat dangereux",
+  4: "Shop",
+  5: "Amélioration",
+  6: "Rencontre",
+  7: "Quête secondaire",
+  8: "Combat unique",
+  9: "Combat flashback"
+};
+
 export default function GamePage() {
   const [playerName, setPlayerName] = useState("Ninja");
   const [position, setPosition] = useState<number>(1);
@@ -70,9 +83,9 @@ export default function GamePage() {
         </Button>
       </div>
 
-      {/* Single Line Display */}
-      <div className="bg-card p-6 rounded-3xl border-2 border-primary/20 shadow-xl overflow-x-auto">
-        <div className="flex gap-4 min-w-max pb-4 justify-center">
+      {/* Board Display */}
+      <div className="bg-card p-6 rounded-3xl border-2 border-primary/20 shadow-xl">
+        <div className="grid grid-cols-5 lg:grid-cols-9 gap-4 justify-items-center">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((cell) => (
             <motion.div
               key={cell}
@@ -95,12 +108,23 @@ export default function GamePage() {
             </motion.div>
           ))}
         </div>
-        {lastSides === 9 && rollValue && !isRolling && (
-          <p className="mt-4 text-center font-bold text-primary animate-bounce">
-            Rolled a 9! You are now on square {position}
-          </p>
-        )}
       </div>
+
+      {/* Event Message */}
+      {lastSides === 9 && rollValue && !isRolling && (
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="bg-primary/10 border-2 border-primary/30 rounded-2xl p-4 text-center"
+        >
+          <p className="text-lg font-bold text-primary">
+            🎲 Vous avez fait {rollValue} ! Vous êtes sur la case {position}
+          </p>
+          <p className="text-xl font-black text-foreground mt-2">
+            ⚡ {caseEvents[position]}
+          </p>
+        </motion.div>
+      )}
 
       <div className="flex flex-col items-center gap-8 py-8">
         <Dice value={rollValue} rolling={isRolling} />

@@ -37,5 +37,6 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
-  base: '/Naruto-dice/'
+  // Base path uniquement pour la production (GitHub Pages)
+  base: process.env.NODE_ENV === 'production' ? '/Naruto-dice/' : '/'
 });
