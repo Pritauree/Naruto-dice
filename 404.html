@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0;url=/Naruto-dice/" />
+    <script>
+      // Redirection pour GitHub Pages SPA
+      const path = window.location.pathname.slice(1);
+      const query = window.location.search;
+      const hash = window.location.hash;
+      
+      // Stocke le chemin pour le restaurer après la redirection
+      if (path) {
+        sessionStorage.setItem('redirect', path + query + hash);
+      }
+      
+      window.location.replace('/Naruto-dice/');
+    </script>
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
