@@ -16,7 +16,9 @@
         const redirect = sessionStorage.getItem('redirect');
         if (redirect) {
           sessionStorage.removeItem('redirect');
-          history.replaceState(null, '', redirect);
+          // Le chemin relatif est restauré par le Router de wouter
+          const basePath = window.location.pathname.match(/^\/[^\/]+/)?.[0] || '';
+          history.replaceState(null, '', basePath + redirect);
         }
       })();
     </script>
