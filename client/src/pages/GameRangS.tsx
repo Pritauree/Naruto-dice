@@ -137,7 +137,7 @@ export default function GamePage() {
             onClick={() => handleRoll(9)}
             disabled={isRolling}
         >
-          Roll 9 (Move)
+          Roll 11 (Move)
         </Button>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-2xl justify-items-center">
