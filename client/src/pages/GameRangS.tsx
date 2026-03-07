@@ -134,7 +134,7 @@ export default function GamePage() {
         <Button
             size="lg"
             className="h-16 text-xl bg-primary hover:bg-primary/90 shadow-lg w-full max-w-md"
-            onClick={() => handleRoll(9)}
+            onClick={() => handleRoll(11)}
             disabled={isRolling}
         >
           Roll 11 (Move)
