@@ -18,8 +18,8 @@ const caseEvents: Record<number, string> = {
   7: "Quête secondaire",
   8: "Combat unique",
   9: "Combat flashback",
-  10: "Evenement 10",
-  11: "Evenement 11"
+  10: "What if ?",
+  11: "Boss monde"
 };
 
 export default function GamePage() {
