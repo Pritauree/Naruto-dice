@@ -1,10 +1,11 @@
 import {useEffect, useState} from "react";
+import {useLocation} from "wouter";
 import {Dice} from "@/components/Dice";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import {motion} from "framer-motion";
 import confetti from "canvas-confetti";
-import {RefreshCw} from "lucide-react";
+import {ArrowLeft, RefreshCw} from "lucide-react";
 import {cn} from "@/lib/utils";
 
 // Événements pour chaque case
@@ -21,6 +22,7 @@ const caseEvents: Record<number, string> = {
 };
 
 export default function GamePage() {
+  const [, setLocation] = useLocation();
   const [playerName, setPlayerName] = useState("Ninja");
   const [position, setPosition] = useState<number>(1);
   const [isRolling, setIsRolling] = useState(false);
@@ -75,6 +77,9 @@ export default function GamePage() {
     <div className="min-h-screen bg-background text-foreground flex flex-col p-4 md:p-8 space-y-8">
       <div className="flex justify-between items-center">
         <div>
+          <Button variant="ghost" size="sm" className="mb-2 -ml-2" onClick={() => setLocation("/")}>
+            <ArrowLeft className="mr-2 h-4 w-4" /> Retour
+          </Button>
           <h1 className="text-4xl font-black text-primary">Ninja Training</h1>
           <p className="text-muted-foreground">Ninja: <span className="text-foreground font-bold">{playerName}</span></p>
         </div>

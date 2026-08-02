@@ -44,7 +44,7 @@
 @layer base {
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: var(--font-body);
+    font-family: var(--font-body), serif;
     background-image:
       radial-gradient(circle at 10% 20%, rgba(255, 102, 0, 0.1) 0%, transparent 20%),
       radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 20%);
@@ -56,7 +56,7 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-anime);
+    font-family: var(--font-anime), serif;
     @apply tracking-wide;
   }
 }
@@ -88,4 +88,34 @@
   animation: speed-lines 0.5s linear infinite;
   z-index: -1;
   pointer-events: none;
+}
+
+/* Bleach Palette - Soul Society Night, Zanpakutô Crimson */
+.theme-bleach {
+  --background: 220 45% 7%;
+  /* Near-black night sky */
+  --foreground: 0 0% 96%;
+  /* Bone white */
+
+  --primary: 0 72% 45%;
+  /* Zanpakutô Crimson */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 205 70% 45%;
+  /* Soul Society Blue */
+  --secondary-foreground: 0 0% 100%;
+
+  --accent: 0 0% 88%;
+  /* Hollow Bone White */
+  --accent-foreground: 220 45% 7%;
+
+  --muted: 220 25% 16%;
+  --muted-foreground: 220 10% 68%;
+
+  --card: 220 30% 11%;
+  --card-foreground: 0 0% 96%;
+
+  --border: 220 25% 22%;
+  --input: 220 25% 22%;
+  --ring: 0 72% 45%;
 }

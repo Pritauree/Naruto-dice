@@ -16,6 +16,18 @@ export default function Home() {
     setLocation("/game/local");
   };
 
+  const handleStartRangS = () => {
+    if (!playerName.trim()) return;
+    localStorage.setItem("ninjaPlayerName", playerName.trim());
+    setLocation("/game-rang-s/local");
+  };
+
+  const handleStartBleach = () => {
+    if (!playerName.trim()) return;
+    localStorage.setItem("ninjaPlayerName", playerName.trim());
+    setLocation("/game-bleach/local");
+  };
+
   return (
     <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
@@ -48,14 +60,36 @@ export default function Home() {
             onKeyDown={(e) => e.key === "Enter" && handleStart()}
           />
           
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="w-full h-16 text-xl rounded-2xl bg-primary hover:bg-primary/90 text-white shadow-lg transition-all group"
             onClick={handleStart}
             disabled={!playerName.trim()}
           >
             Start Training
             <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
+          </Button>
+
+          <Button
+            size="lg"
+            variant="outline"
+            className="w-full h-14 text-lg rounded-2xl transition-all group"
+            onClick={handleStartRangS}
+            disabled={!playerName.trim()}
+          >
+            Rang S
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+
+          <Button
+            size="lg"
+            variant="outline"
+            className="w-full h-14 text-lg rounded-2xl transition-all group"
+            onClick={handleStartBleach}
+            disabled={!playerName.trim()}
+          >
+            Univers Bleach
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </motion.div>
       </div>

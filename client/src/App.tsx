@@ -5,6 +5,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Game from "@/pages/Game";
 import GameRangS from "@/pages/GameRangS";
+import GameBleach from "@/pages/GameBleach";
 
 function App() {
   // En production sur GitHub Pages, on a besoin du base path
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" component={Home} />
           <Route path="/game/:id" component={Game} />
           <Route path="/game-rang-s/:id" component={GameRangS} />
+          <Route path="/game-bleach/:id" component={GameBleach} />
           <Route component={NotFound} />
         </Switch>
       </TooltipProvider>
