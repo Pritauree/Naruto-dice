@@ -10,8 +10,8 @@ export interface BleachTier {
 
 export const bleachTiers: BleachTier[] = [
   {
-    id: "academie",
-    label: "Académie Shin'ō",
+    id: "rukongai",
+    label: "Rukongai",
     diceSides: 6,
     events: {
       1: "Combat",
@@ -23,8 +23,8 @@ export const bleachTiers: BleachTier[] = [
     },
   },
   {
-    id: "shinigami",
-    label: "Shinigami Remplaçant",
+    id: "academie",
+    label: "Académie Shin'o",
     diceSides: 7,
     events: {
       1: "Combat",
@@ -37,8 +37,8 @@ export const bleachTiers: BleachTier[] = [
     },
   },
   {
-    id: "vice-capitaine",
-    label: "Vice-Capitaine",
+    id: "shinigami",
+    label: "Shinigami",
     diceSides: 8,
     events: {
       1: "Combat",
@@ -52,8 +52,8 @@ export const bleachTiers: BleachTier[] = [
     },
   },
   {
-    id: "goat",
-    label: "Goat",
+    id: "officer",
+    label: "Officier",
     diceSides: 9,
     events: {
       1: "Combat",
@@ -65,6 +65,23 @@ export const bleachTiers: BleachTier[] = [
       7: "Mission",
       8: "Maîtrise Zanpakuto",
       9: "Entraînement Hollow"
+    },
+  },
+  {
+    id: "officier-grade",
+    label: "Officier gradé",
+    diceSides: 10,
+    events: {
+      1: "Combat",
+      2: "Combat dangereux",
+      3: "Entraînement",
+      4: "Rencontre",
+      5: "Shop",
+      6: "Croisement",
+      7: "Mission",
+      8: "Maîtrise Zanpakuto",
+      9: "Entraînement Hollow",
+      10: "Raids"
     },
   },
 ];
